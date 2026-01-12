@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Google Conversational Messenger</title>
+
+  <link rel="stylesheet"
+    href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+
+  <script
+    src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js">
+  </script>
+</head>
+
+<body>
+
+  <df-messenger
+    location="europe-west1"
+    project-id="cf-gcpai-dev-mi"
+    agent-id="9755be34-4b8f-4fce-8ae2-cba61fdb0a53"
+    language-code="en"
+    max-query-length="-1">
+
+    <df-messenger-chat-bubble
+      chat-title="test_agent">
+    </df-messenger-chat-bubble>
+
+  </df-messenger>
+
+  <style>
+    df-messenger {
+      z-index: 999;
+      position: fixed;
+      --df-messenger-font-color: #000;
+      --df-messenger-chat-background: #f3f6fc;
+      --df-messenger-message-user-background: #d3e3fd;
+      --df-messenger-message-bot-background: #fff;
+      bottom: 16px;
+      right: 16px;
+    }
+  </style>
+
+</body>
+</html>

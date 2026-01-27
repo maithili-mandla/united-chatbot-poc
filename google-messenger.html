@@ -14,6 +14,11 @@
 
 <body>
 
+  <!-- Reset button above chat bubble -->
+  <button id="reset-chat" style="position: fixed; bottom: 80px; right: 16px; z-index:1000;">
+    Reset Chat
+  </button>
+
   <df-messenger
     location="europe-west1"
     project-id="cf-gcpai-dev-mi"
@@ -39,6 +44,19 @@
       right: 16px;
     }
   </style>
+
+  <script>
+    // Select the df-messenger element
+    const messenger = document.querySelector('df-messenger');
+
+    // Reset chat when button is clicked
+    document.getElementById('reset-chat').addEventListener('click', () => {
+      messenger.reset();
+    });
+
+    // Optional: auto-reset chat when page loads
+    // window.onload = () => { messenger.reset(); };
+  </script>
 
 </body>
 </html>

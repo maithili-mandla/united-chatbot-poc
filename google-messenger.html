@@ -15,7 +15,9 @@
 <body>
 
   <!-- Reset button above chat bubble -->
-  <button id="reset-chat" style="position: fixed; bottom: 80px; right: 16px; z-index:1000;">
+  <button
+    id="reset-chat"
+    style="position: fixed; bottom: 80px; right: 16px; z-index:1000;">
     Reset Chat
   </button>
 
@@ -23,6 +25,7 @@
     location="europe-west1"
     project-id="cf-gcpai-dev-mi"
     agent-id="9755be34-4b8f-4fce-8ae2-cba61fdb0a53"
+    environment="projects/cf-gcpai-dev-mi/locations/europe-west1/agents/9755be34-4b8f-4fce-8ae2-cba61fdb0a53/environments/6d86fecb-c379-424f-8520-e843942910b7"
     language-code="en"
     max-query-length="-1">
 
@@ -46,16 +49,11 @@
   </style>
 
   <script>
-    // Select the df-messenger element
     const messenger = document.querySelector('df-messenger');
 
-    // Reset chat when button is clicked
     document.getElementById('reset-chat').addEventListener('click', () => {
       messenger.reset();
     });
-
-    // Optional: auto-reset chat when page loads
-    // window.onload = () => { messenger.reset(); };
   </script>
 
 </body>

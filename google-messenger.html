@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Google Conversational Messenger</title>
+  <title>Google Conversational Messenger - TOM Agent</title>
 
   <link rel="stylesheet"
     href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
@@ -21,16 +21,17 @@
     Reset Chat
   </button>
 
+  <!-- DF Messenger -->
   <df-messenger
     location="europe-west1"
     project-id="cf-gcpai-dev-mi"
-    agent-id="9755be34-4b8f-4fce-8ae2-cba61fdb0a53"
-    environment="projects/cf-gcpai-dev-mi/locations/europe-west1/agents/9755be34-4b8f-4fce-8ae2-cba61fdb0a53/environments/6d86fecb-c379-424f-8520-e843942910b7"
+    agent-id="2a17cc3f-abfe-4f3f-8fdb-9995c591d133"
+    environment="projects/cf-gcpai-dev-mi/locations/europe-west1/agents/2a17cc3f-abfe-4f3f-8fdb-9995c591d133/environments/3648dfbb-d7ac-418d-b5aa-0aafa7520dd2"
     language-code="en"
     max-query-length="-1">
 
     <df-messenger-chat-bubble
-      chat-title="test_agent">
+      chat-title="TOM Agent">
     </df-messenger-chat-bubble>
 
   </df-messenger>
@@ -51,6 +52,7 @@
   <script>
     const messenger = document.querySelector('df-messenger');
 
+    // Reset chat button
     document.getElementById('reset-chat').addEventListener('click', () => {
       messenger.reset();
     });

@@ -54,7 +54,7 @@
       messenger.reset();
     });
 
-    // Optional: Pre-fill guidance for certain queries
+    // Optional: guidance for queries about Platform Lead or presentation
     messenger.addEventListener('df-response-received', (event) => {
       const msg = event.detail.response.queryResult.text || "";
       if (msg.toLowerCase().includes("platform lead") || msg.toLowerCase().includes("presentation")) {

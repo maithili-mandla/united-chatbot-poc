@@ -41,5 +41,28 @@
     }
   </style>
 
+  <!-- Optional: Reset Chat Button -->
+  <button id="reset-chat" 
+          style="position: fixed; bottom: 80px; right: 16px; z-index:1000;">
+    Reset Chat
+  </button>
+
+  <script>
+    const messenger = document.querySelector('df-messenger');
+
+    // Reset chat functionality
+    document.getElementById('reset-chat').addEventListener('click', () => {
+      messenger.reset();
+    });
+
+    // Optional: Pre-fill some guidance if user types unclear queries
+    messenger.addEventListener('df-response-received', (event) => {
+      const msg = event.detail.response.queryResult.text || "";
+      if (msg.toLowerCase().includes("platform lead") || msg.toLowerCase().includes("presentation")) {
+        messenger.renderCustomMessage("Hi! I see you're asking about the Platform Lead (PL) or a presentation. Please provide more context so I can assist you better.");
+      }
+    });
+  </script>
+
 </body>
 </html>

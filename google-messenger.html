@@ -2,47 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Google Conversational Messenger - TOM Agent</title>
+  <title>TOM Agent - Conversational Messenger</title>
 
   <!-- DF Messenger CSS -->
   <link rel="stylesheet"
-    href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+        href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
 
   <!-- DF Messenger JS -->
-  <script
-    src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js">
-  </script>
+  <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
 </head>
 
 <body>
 
-  <!-- Reset button above chat bubble -->
-  <button
-    id="reset-chat"
-    style="position: fixed; bottom: 80px; right: 16px; z-index:1000;">
-    Reset Chat
-  </button>
-
-  <!-- DF Messenger -->
+  <!-- DF Messenger Widget -->
   <df-messenger
-    location="europe-west1"
-    project-id="cf-gcpai-dev-mi"
-    agent-id="2a17cc3f-abfe-4f3f-8fdb-9995c591d133"
-    environment="e70958a9-7d8b-4fcd-a17b-a1572b52a823"
-    language-code="en"
-    max-query-length="-1">
+      location="europe-west1"
+      project-id="cf-gcpai-dev-mi"
+      agent-id="2a17cc3f-abfe-4f3f-8fdb-9995c591d133"
+      environment="e70958a9-7d8b-4fcd-a17b-a1572b52a823"
+      language-code="en"
+      max-query-length="-1">
 
-    <df-messenger-chat-bubble
-      chat-title="TOM Agent">
-    </df-messenger-chat-bubble>
-
+      <df-messenger-chat-bubble chat-title="TOM Agent"></df-messenger-chat-bubble>
   </df-messenger>
 
+  <!-- Custom Styling -->
   <style>
     df-messenger {
       z-index: 999;
       position: fixed;
       --df-messenger-font-color: #000;
+      --df-messenger-font-family: Google Sans;
       --df-messenger-chat-background: #f3f6fc;
       --df-messenger-message-user-background: #d3e3fd;
       --df-messenger-message-bot-background: #fff;
@@ -50,15 +40,6 @@
       right: 16px;
     }
   </style>
-
-  <script>
-    const messenger = document.querySelector('df-messenger');
-
-    // Reset chat button
-    document.getElementById('reset-chat').addEventListener('click', () => {
-      messenger.reset();
-    });
-  </script>
 
 </body>
 </html>

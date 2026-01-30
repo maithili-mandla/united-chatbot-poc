@@ -2,13 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>AI & Automation – SharePoint</title>
+<title>AI & Automation – agentTOM</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <!-- Dialogflow Messenger -->
-<link rel="stylesheet"
- href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
-<script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+<link
+  rel="stylesheet"
+  href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css"
+/>
+
+<!-- Cache-busted DF Messenger JS -->
+<script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js?v=agentTOM-v1"></script>
 
 <style>
 /* ================== BASE ================== */
@@ -195,12 +199,14 @@ df-messenger {
 
 <!-- DF MESSENGER -->
 <df-messenger
+  key="agentTOM-v1"
   location="europe-west1"
   project-id="cf-gcpai-dev-mi"
   agent-id="9755be34-4b8f-4fce-8ae2-cba61fdb0a53"
-  environment="6d86fecb-c379-424f-8520-e843942910b7"
+  environment="projects/cf-gcpai-dev-mi/locations/europe-west1/agents/9755be34-4b8f-4fce-8ae2-cba61fdb0a53/environments/6d86fecb-c379-424f-8520-e843942910b7"
   language-code="en"
   max-query-length="-1">
+
   <df-messenger-chat-bubble chat-title="agentTOM"></df-messenger-chat-bubble>
 </df-messenger>
 

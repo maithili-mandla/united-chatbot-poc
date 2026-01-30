@@ -2,14 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>TOM – SharePoint Mock</title>
+  <title>AI & Automation – SharePoint Mock</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- DF Messenger CSS -->
+  <!-- DF Messenger -->
   <link rel="stylesheet"
-        href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
-
-  <!-- DF Messenger JS -->
+    href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
   <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
 
   <style>
@@ -19,122 +17,171 @@
       background: #f3f2f1;
     }
 
-    .sp-header {
-      background: #0078d4;
+    /* ===== TOP GLOBAL BAR ===== */
+    .global-header {
+      background: #004578;
       color: white;
-      padding: 14px 24px;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 14px;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 2px;
       font-size: 18px;
+    }
+
+    .search {
+      flex: 1;
+      max-width: 480px;
+    }
+
+    .search input {
+      width: 100%;
+      padding: 6px 10px;
+      border-radius: 4px;
+      border: none;
+    }
+
+    .user {
       font-weight: 600;
     }
 
-    .sp-subheader {
-      background: #ffffff;
-      padding: 12px 24px;
-      border-bottom: 1px solid #edebe9;
-      font-size: 14px;
-      color: #323130;
+    /* ===== SITE NAV ===== */
+    .site-nav {
+      background: #005a9e;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      gap: 24px;
+      font-size: 15px;
+      align-items: center;
     }
 
-    .sp-content {
-      padding: 24px;
+    .site-nav span {
+      cursor: pointer;
     }
 
-    .sp-card {
+    .site-nav span.active {
+      border-bottom: 2px solid white;
+      padding-bottom: 4px;
+    }
+
+    /* ===== PAGE COMMAND BAR ===== */
+    .command-bar {
       background: white;
-      padding: 16px;
-      border-radius: 4px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      max-width: 1200px;
-      margin: auto;
-      min-height: 500px;
+      padding: 10px 20px;
+      border-bottom: 1px solid #edebe9;
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
     }
 
+    .command-left span,
+    .command-right span {
+      margin-right: 16px;
+      cursor: pointer;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      height: 520px;
+      background: linear-gradient(135deg, #020024, #090979, #3f0071);
+      position: relative;
+    }
+
+    /* ===== DF MESSENGER ===== */
     df-messenger {
-      z-index: 999;
       position: fixed;
       bottom: 16px;
-      right: 16px;
+      right: 24px;
+      z-index: 999;
 
-      --df-messenger-font-color: #000;
       --df-messenger-font-family: "Segoe UI", Arial, sans-serif;
       --df-messenger-chat-background: #f3f6fc;
       --df-messenger-message-user-background: #d3e3fd;
       --df-messenger-message-bot-background: #ffffff;
     }
 
+    /* ===== RESET BUTTON ===== */
     #reset-chat {
       position: fixed;
-      bottom: 80px;
-      right: 16px;
+      bottom: 88px;
+      right: 24px;
       z-index: 1000;
       padding: 8px 12px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
+      border-radius: 50%;
+      border: none;
       background: white;
       cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
   </style>
 </head>
 
 <body>
 
-  <div class="sp-header">
-    TOM – Collaboration Platform
+  <!-- Global Header -->
+  <div class="global-header">
+    <div class="logo">METRO</div>
+    <div>SharePoint</div>
+
+    <div class="search">
+      <input type="text" placeholder="Search this site" />
+    </div>
+
+    <div class="user">Mandla, Maithili</div>
   </div>
 
-  <div class="sp-subheader">
-    Home › TOM › FAQ Assistant
+  <!-- Site Navigation -->
+  <div class="site-nav">
+    <span class="active">AI & Automation</span>
+    <span>Home</span>
+    <span>METRO x Google Cloud</span>
+    <span>Blog Articles</span>
+    <span>Documents</span>
+    <span>Edit</span>
   </div>
 
-  <div class="sp-content">
-    <div class="sp-card">
-      <h3>Ask TOM</h3>
-
-      <p>
-        This page is a <strong>mock SharePoint-style interface</strong> created with the help
-        of a coding assistant to demonstrate how the TOM Conversational Agent would be embedded
-        within an internal collaboration platform.
-      </p>
-
-      <p>
-        The assistant is connected to a curated data store and can answer questions
-        based on selected internal SharePoint documents.
-        This setup is intended for <strong>demo and stakeholder review purposes</strong>.
-      </p>
-
-      <p><strong>Documents included in this demo:</strong></p>
-      <ul>
-        <li>TOM Overview.pptx</li>
-        <li>Platform Roles & Responsibilities.pptx</li>
-        <li>SRE & Platform Lead FAQ.pptx</li>
-      </ul>
-
-      <p style="font-size: 13px; color: #605e5c;">
-        Note: The scope is intentionally limited for the initial POC.
-        Future iterations will include Graph API–based indexing, automatic refresh,
-        and role-based access.
-      </p>
+  <!-- Command Bar -->
+  <div class="command-bar">
+    <div class="command-left">
+      <span>＋ New</span>
+      <span>Translation</span>
+      <span>Page details</span>
+      <span>Preview</span>
+      <span>Analytics</span>
+    </div>
+    <div class="command-right">
+      <span>Published 1/28/2026</span>
+      <span>Share</span>
+      <span>Edit</span>
     </div>
   </div>
 
+  <!-- Hero Area -->
+  <div class="hero"></div>
+
+  <!-- DF Messenger -->
   <df-messenger
-      location="europe-west1"
-      project-id="cf-gcpai-dev-mi"
-      agent-id="9755be34-4b8f-4fce-8ae2-cba61fdb0a53"
-      environment="6d86fecb-c379-424f-8520-e843942910b7"
-      language-code="en"
-      max-query-length="-1">
-    <df-messenger-chat-bubble chat-title="TOM Agent"></df-messenger-chat-bubble>
+    location="europe-west1"
+    project-id="cf-gcpai-dev-mi"
+    agent-id="9755be34-4b8f-4fce-8ae2-cba61fdb0a53"
+    environment="6d86fecb-c379-424f-8520-e843942910b7"
+    language-code="en"
+    max-query-length="-1">
+    <df-messenger-chat-bubble chat-title="test_agent"></df-messenger-chat-bubble>
   </df-messenger>
 
-  <button id="reset-chat">Reset Chat</button>
+  <!-- Reset -->
+  <button id="reset-chat">✕</button>
 
   <script>
-    const messenger = document.querySelector('df-messenger');
-
-    document.getElementById('reset-chat').addEventListener('click', () => {
-      messenger.reset();
-    });
+    const messenger = document.querySelector("df-messenger");
+    document.getElementById("reset-chat").onclick = () => messenger.reset();
   </script>
 
 </body>

@@ -19,7 +19,6 @@
       background: #f3f2f1;
     }
 
-    /* Fake SharePoint header */
     .sp-header {
       background: #0078d4;
       color: white;
@@ -50,7 +49,6 @@
       min-height: 500px;
     }
 
-    /* DF Messenger placement + theme */
     df-messenger {
       z-index: 999;
       position: fixed;
@@ -64,7 +62,6 @@
       --df-messenger-message-bot-background: #ffffff;
     }
 
-    /* Reset button */
     #reset-chat {
       position: fixed;
       bottom: 80px;
@@ -81,7 +78,6 @@
 
 <body>
 
-  <!-- SharePoint Header -->
   <div class="sp-header">
     TOM – Collaboration Platform
   </div>
@@ -90,25 +86,37 @@
     Home › TOM › FAQ Assistant
   </div>
 
-  <!-- Content -->
   <div class="sp-content">
     <div class="sp-card">
       <h3>Ask TOM</h3>
+
       <p>
-        This is a demo of the TOM Conversational Agent using selected SharePoint documents.
-        The assistant can answer questions based on curated PPTs and internal material.
+        This page is a <strong>mock SharePoint-style interface</strong> created with the help
+        of a coding assistant to demonstrate how the TOM Conversational Agent would be embedded
+        within an internal collaboration platform.
       </p>
 
-      <p><strong>Included documents (demo scope):</strong></p>
+      <p>
+        The assistant is connected to a curated data store and can answer questions
+        based on selected internal SharePoint documents.
+        This setup is intended for <strong>demo and stakeholder review purposes</strong>.
+      </p>
+
+      <p><strong>Documents included in this demo:</strong></p>
       <ul>
         <li>TOM Overview.pptx</li>
         <li>Platform Roles & Responsibilities.pptx</li>
         <li>SRE & Platform Lead FAQ.pptx</li>
       </ul>
+
+      <p style="font-size: 13px; color: #605e5c;">
+        Note: The scope is intentionally limited for the initial POC.
+        Future iterations will include Graph API–based indexing, automatic refresh,
+        and role-based access.
+      </p>
     </div>
   </div>
 
-  <!-- DF Messenger -->
   <df-messenger
       location="europe-west1"
       project-id="cf-gcpai-dev-mi"
@@ -119,7 +127,6 @@
     <df-messenger-chat-bubble chat-title="TOM Agent"></df-messenger-chat-bubble>
   </df-messenger>
 
-  <!-- Reset Chat Button -->
   <button id="reset-chat">Reset Chat</button>
 
   <script>
